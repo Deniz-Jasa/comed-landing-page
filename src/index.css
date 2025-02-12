@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 230 85% 60%;
+  --border: 214.3 31.8% 91.4%;
+}
+
+@layer base {
+  :root {
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  .glass {
+    @apply backdrop-blur-md bg-white/30 border border-white/20 shadow-lg;
+  }
+
+  .container {
+    @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-24 sm:py-32;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 text-base font-medium text-white bg-primary rounded-full shadow-md hover:brightness-110 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-6 py-3 text-base font-medium text-primary bg-white/10 backdrop-blur-sm rounded-full shadow-md hover:bg-white/20 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+}
+
+/* Add these custom styles for the code block */
+pre[class*="language-"] {
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+}
+
+code[class*="language-"] {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.token.comment {
+  color: #6c7280;
+}
+
+.token.string {
+  color: #a5d6ff;
+}
+
+.token.number {
+  color: #ff9580;
+}
+
+.token.keyword {
+  color: #ff7b72;
+}
+
+.token.function {
+  color: #d2a8ff;
+}
+
+.token.property {
+  color: #79c0ff;
+}
