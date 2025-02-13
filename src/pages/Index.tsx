@@ -7,18 +7,18 @@ import 'prismjs/components/prism-typescript';
 
 const HeroSection = () => (
   <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-    <div className="container mx-auto px-4 pt-16 md:pt-32">
+    <div className="container mx-auto px-4 md:px-16 mt-32 md:mt-8">
       <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center">
         <div className="text-center lg:text-left">
           <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary mb-6 animate-fade-in">
             A Better Emergency Room Experience
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "200ms" }}>
-            AI-Powered Emergency
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in" style={{ animationDelay: "200ms" }}>
+            AI-Powered
             <br />
-            Room Software
+            Emergency Rooms
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "400ms" }}>
+          <p className="text-xl text-gray-600 mb-8 px-8 md:px-0 max-w-2xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "400ms" }}>
             Reduce wait times. Prioritize care. Assist healthcare professionals.
             Streamline emergency department triage with AI-driven insights.
           </p>
@@ -27,13 +27,13 @@ const HeroSection = () => (
               href="https://comed-sandbox.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-primary mb-8 md:mb-0"
             >
               Try Our Sandbox App
             </a>
           </div>
         </div>
-        <div className="block mt-4 lg:mt-0 animate-fade-in" style={{ animationDelay: "800ms" }}>
+        <div className="block animate-fade-in" style={{ animationDelay: "800ms" }}>
           <img
             src="/hero.svg"
             alt="Comed Dashboard"
@@ -59,8 +59,8 @@ const HowItWorksSection = () => {
         }
       },
       {
-        threshold: 0.3, // Trigger when 30% of the section is visible
-        rootMargin: '-50px', // Trigger slightly before the section comes into view
+        threshold: 0.1, // Lower threshold for smaller screens
+        rootMargin: '0px', // Adjust root margin if needed
       }
     );
 
@@ -102,18 +102,18 @@ const HowItWorksSection = () => {
     <section ref={sectionRef} id="how-it-works" className="section py-24 bg-gray-50">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold mb-4">How It Works</h2>
-          <p className="text-gray-600 text-xl max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mt-24 mb-4">How It Works</h2>
+          <p className="text-gray-600 text-xl max-w-3xl mx-auto px-8 md:px-0">
             Comed improves the emergency room process through automated triaging, AI-powered insights for staff, and a clean interface for a better patient experience.
           </p>
         </div>
-        <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-4 md:px-0">
           {steps.map((step, index) => (
             <div
               key={index}
               className={`relative opacity-0 ${isVisible ? 'animate-fade-in' : ''}`}
               style={{
-                animationDelay: `${index * 1000}ms`,
+                animationDelay: `${index * 500}ms`, // Reduced delay
                 animationFillMode: 'forwards'
               }}
             >
@@ -131,11 +131,11 @@ const HowItWorksSection = () => {
                 <div
                   className={`hidden lg:block absolute -right-6 top-1/2 transform -translate-y-1/2 opacity-0 ${isVisible ? 'animate-fade-in' : ''}`}
                   style={{
-                    animationDelay: `${index * 1000 + 500}ms`,
+                    animationDelay: `${index * 500 + 250}ms`, // Reduced delay
                     animationFillMode: 'forwards'
                   }}
                 >
-
+                  {/* Arrow or connector */}
                 </div>
               )}
             </div>
@@ -151,47 +151,17 @@ const TechnologySection = () => {
     Prism.highlightAll();
   }, []);
 
-  const codeExample = `// AI Triage Classification
-const triageAssessment = await ai.classify({
-  symptoms: patientSymptoms,
-  vitals: vitalSigns,
-  model: "triage-classifier-v1",
-  classes: [
-    "CTAS 1 - Resuscitation",
-    "CTAS 2 - Emergent",
-    "CTAS 3 - Urgent",
-    "CTAS 4 - Less Urgent",
-    "CTAS 5 - Non Urgent"
-  ]
-});
-
-// Physician AI Assistant
-const medicalInsights = await ai.chat({
-  model: "physician-assistant-v1",
-  message: "Given these symptoms and vitals...",
-  context: patientData,
-  training: "medical-guidelines-2024"
-});
-
-// Medical Literature Ranking
-const relevantSources = await ai.rank({
-  query: patientCondition,
-  corpus: "medical-literature-db",
-  model: "medical-rank-v1",
-  top_k: 5
-});`;
-
   return (
     <section id="technology" className="py-8 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mb-8">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl font-bold mb-4">Our Approach</h2>
-          <p className="text-gray-600 text-xl max-w-3xl mx-auto px-1">
+          <p className="text-gray-600 text-xl max-w-3xl mx-auto px-8 md:px-0">
             Three specialized AI models to improve the biggest pain-points in emergency care
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-start max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-start max-w-6xl mx-auto px-4 md:px-0">
           {/* Image - Hidden on mobile */}
           <div className="relative group order-1 lg:order-2 hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 blur-xl group-hover:blur-2xl transition-all duration-300 opacity-50"></div>
@@ -306,8 +276,8 @@ const BenefitsSection = () => {
         }
       },
       {
-        threshold: 0.3,
-        rootMargin: '-50px',
+        threshold: 0.1, // Lower threshold for mobile
+        rootMargin: '0px', // Adjust root margin if needed
       }
     );
 
@@ -320,16 +290,16 @@ const BenefitsSection = () => {
 
   const CountUpNumber = ({ end, suffix = "", pulse = false }: { end: number | string, suffix?: string, pulse?: boolean }) => {
     const [count, setCount] = useState(0);
-    
+
     useEffect(() => {
       if (!isVisible || pulse) return;
-      
+
       const endNum = typeof end === 'number' ? end : parseInt(end);
       const duration = 2000; // 2 seconds
       const steps = 60;
       const stepValue = endNum / steps;
       let current = 0;
-      
+
       const timer = setInterval(() => {
         current += stepValue;
         if (current >= endNum) {
@@ -339,7 +309,7 @@ const BenefitsSection = () => {
           setCount(Math.floor(current));
         }
       }, duration / steps);
-      
+
       return () => clearInterval(timer);
     }, [end, isVisible, pulse]);
 
@@ -412,7 +382,7 @@ const BenefitsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4 md:px-0">
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -436,9 +406,6 @@ const BenefitsSection = () => {
             </div>
           ))}
         </div>
-
-        {/* Additional Success Metrics */}
-
       </div>
     </section>
   );
@@ -449,9 +416,9 @@ const ContactSection = () => {
     <section id="contact" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 px-4 md:px-0">
             {/* Left side - Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-8 px-2 md:px-0">
               <div>
                 <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
                 <p className="text-xl text-gray-600 mb-8">
@@ -489,14 +456,14 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Availability</h3>
-                    <p className="text-gray-600">Monday - Friday, 9:00 AM - 5:00 PM EST</p>
+                    <p className="text-gray-600">Weekdays, 9:00 AM - 5:00 PM EST</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Right side - Contact Form */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="bg-white rounded-2xl p-8 shadow-sm ">
               <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -563,7 +530,7 @@ const ContactSection = () => {
 
 const Footer = () => {
   return (
-    <footer className="py-8 mt-0 mb-10 bg-gray-50">
+    <footer className="px-4 md:px-32 pb-24 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="border-t border-gray-300 pt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
@@ -641,7 +608,7 @@ const PricingSection = () => {
     <section id="pricing" className="section py-24 mb-24">
       <div className="container mx-auto px-4 max-w-6xl">
         <h2 className="text-4xl font-bold text-center mb-10">Pricing</h2>
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-12 px-4 md:px-0">
           {plans.map((plan) => (
             <div key={plan.name} className="bg-white rounded-lg p-12 shadow-lg">
               <h3 className="text-2xl font-bold mb-3">{plan.name}</h3>
@@ -693,14 +660,12 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className=" ">
-        <HeroSection />
-        <HowItWorksSection />
-        <TechnologySection />
-        <BenefitsSection />
-        <PricingSection />
-        <ContactSection />
-      </div>
+      <HeroSection />
+      <HowItWorksSection />
+      <TechnologySection />
+      <BenefitsSection />
+      <PricingSection />
+      <ContactSection />
       <Footer />
     </div>
   );
