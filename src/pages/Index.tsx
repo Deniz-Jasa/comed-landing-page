@@ -152,39 +152,26 @@ const TechnologySection = () => {
   }, []);
 
   return (
-    <section id="technology" className="py-8 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 mb-8">
-        <div className="text-center mb-16 md:mb-24">
+    <section className="py-16 bg-gray-50 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Our Approach</h2>
-          <p className="text-gray-600 text-xl max-w-3xl mx-auto px-8 md:px-0">
+          <p className="text-gray-600 text-xl max-w-3xl mx-auto">
             Three specialized AI models to improve the biggest pain-points in emergency care
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-start max-w-6xl mx-auto px-4 md:px-0">
-          {/* Image - Hidden on mobile */}
-          <div className="relative group order-1 lg:order-2 hidden lg:block">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 blur-xl group-hover:blur-2xl transition-all duration-300 opacity-50"></div>
-            <div className="relative w-[170%]" style={{ position: 'absolute', right: 0, top: 0 }}>
-              <img
-                src="/triage.svg"
-                alt="Triage Process"
-                className="rounded-tl-2xl rounded-bl-2xl shadow-xl w-full transform scale-110"
-                style={{ position: 'relative', right: '-50%' }}
-              />
-            </div>
-          </div>
-
-          {/* Features side */}
-          <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
-            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm">
+        <div className="grid lg:grid-cols-2 items-center gap-8">
+          {/* Features Column */}
+          <div className="space-y-6 px-4 lg:px-8">
+            <div className="bg-white p-6 rounded-2xl shadow-sm">
               <div className="flex items-start">
-                <div className="bg-primary/5 p-2 md:p-3 rounded-xl mr-4 shrink-0">
-                  <ListFilter className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                <div className="bg-blue-50 p-3 rounded-xl mr-4">
+                  <ListFilter className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-2">Triage Classification Model</h3>
-                  <p className="text-base md:text-base text-gray-600">
+                  <h3 className="text-xl font-semibold mb-2">Triage Classification Model</h3>
+                  <p className="text-gray-600">
                     Custom-trained AI model that classifies patient cases into CTAS levels,
                     using symptoms and vital signs to recommend appropriate triage priorities.
                   </p>
@@ -192,14 +179,14 @@ const TechnologySection = () => {
               </div>
             </div>
 
-            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm">
+            <div className="bg-white p-6 rounded-2xl shadow-sm">
               <div className="flex items-start">
-                <div className="bg-primary/5 p-2 md:p-3 rounded-xl mr-4 shrink-0">
-                  <MessageSquare className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                <div className="bg-blue-50 p-3 rounded-xl mr-4">
+                  <MessageSquare className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-2">Physician AI Assistant</h3>
-                  <p className="text-base md:text-base text-gray-600">
+                  <h3 className="text-xl font-semibold mb-2">Physician AI Assistant</h3>
+                  <p className="text-gray-600">
                     Specialized chat model trained on medical knowledge, allowing physicians
                     to discuss cases, get second opinions, and explore treatment options.
                   </p>
@@ -207,14 +194,14 @@ const TechnologySection = () => {
               </div>
             </div>
 
-            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm">
+            <div className="bg-white p-6 rounded-2xl shadow-sm">
               <div className="flex items-start">
-                <div className="bg-primary/5 p-2 md:p-3 rounded-xl mr-4 shrink-0">
-                  <Library className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                <div className="bg-blue-50 p-3 rounded-xl mr-4">
+                  <Library className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-2">Medical Literature Ranking</h3>
-                  <p className="text-base md:text-base text-gray-600">
+                  <h3 className="text-xl font-semibold mb-2">Medical Literature Ranking</h3>
+                  <p className="text-gray-600">
                     AI-powered system that ranks and retrieves relevant medical literature
                     and sources based on the patient's condition and symptoms.
                   </p>
@@ -222,6 +209,20 @@ const TechnologySection = () => {
               </div>
             </div>
           </div>
+
+          <div className="relative hidden lg:block w-[1200px]">
+            {/* Blue glow with pulsing animation */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/50 to-blue-500/30 blur-2xl animate-pulse-slow"></div>
+
+            {/* The image itself */}
+            <img
+              src="/triage.svg"
+              alt="Triage Interface"
+              className="relative w-full h-auto"
+            />
+          </div>
+
+
         </div>
       </div>
     </section>

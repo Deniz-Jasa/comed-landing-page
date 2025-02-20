@@ -8,18 +8,22 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  width: 100vw;
-  position: relative;
+  /* Remove width: 100vw; and max-width: 100%, they can cause overflow. */
+  /* If you want to ensure no horizontal scrollbar, you can do: */
+  /* overflow-x: hidden; */
+
+  /* Usually no need for position: relative on html/body */
+  box-sizing: border-box; /* So padding is included in total width/height */
+  width: 100%;           /* Let the body fill the viewport width naturally */
 }
 
 #root {
-  max-width: 1280px;
+  /* If you want a max width for your main container, you can re-enable it: */
+  /* max-width: 1280px; */
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  overflow-x: hidden;
-  width: 100%;
   box-sizing: border-box;
   position: relative;
 }
