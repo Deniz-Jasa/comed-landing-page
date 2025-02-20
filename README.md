@@ -2,17 +2,19 @@
 
 ## About This Project
 
-This repo is the landing page for Comed. Comed is an AI-powered web application designed to enhance emergency department operations and patient care. Our platform helps streamline triage, patient monitoring, and clinical decision support in emergency room settings.
+![landing](https://github.com/user-attachments/assets/aa0ee5c8-4ac8-43f3-806f-9f484cae3139)
+
+This repo is the landing page for Comed! Comed is AI-powered software designed to enhance emergency department operations and patient care. It speeds up the check-in and check-out process, automates triaging for nurses, monitors patients, and includes an AI medical assistant to help physicians by recommending differential diagnosis, up-to-date treatment options, and ranking relevant medical literature in real-time. I originally built Comed during a 36-hour hackathon and later expanded it with a new sandbox web-app and this landing page for potential customers to try and learn more about.
 
 ## Technology Stack
 
-This project is built with modern technologies for reliability and performance:
+This project is built with:
 
-- Vite - Next Generation Frontend Tooling
-- TypeScript - For type-safe code
-- React - UI Framework
-- shadcn-ui - Beautifully designed components
-- Tailwind CSS - Utility-first CSS framework
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
 ## License
 
